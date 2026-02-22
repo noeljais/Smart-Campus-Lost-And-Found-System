@@ -91,7 +91,9 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ```
 Smart_Campus_Lost_And_Found_System/
+README.md
 
+src/
 Main.java
 
 DB.java
@@ -104,9 +106,10 @@ ReportFrame.java
 
 ViewItemsFrame.java
 
+database/
 database.sql
 
-README.md
+
 ```
 
 ---
