@@ -1,156 +1,311 @@
-# Smart Campus Lost and Found System
+# 🎒 Smart Campus Lost and Found System
 
-A desktop application built with Java Swing and PostgreSQL (Supabase) for managing lost and found items on campus.
+## 👥 Team Members
 
-## Features
+* **Noel Jais Manuel**
+* **Bharath**
 
-- **Authentication**: Signup and Login with campus email validation
-- **Report Items**: Report lost or found items with images
-- **View Items**: Browse all lost and found items
-- **Report History**: View your own reported items
-- **Image Upload**: Upload and preview images for items
+---
 
-## Technology Stack
+# 📌 Problem Statement
 
-- **Frontend**: Java Swing
-- **Database**: PostgreSQL (Supabase)
-- **Connection**: JDBC with PostgreSQL driver
+In a large campus environment, students and staff frequently lose personal belongings such as ID cards, wallets, mobile phones, keys, and books. Currently, there is no centralized digital system to report and track lost and found items. This results in:
 
-## Project Structure
+* Difficulty in locating lost items
+* Time-consuming manual reporting
+* Lack of proper communication between finder and owner
+* Low recovery rate of lost belongings
+
+Therefore, there is a need for a **centralized digital Lost and Found System** to efficiently manage lost and found items within the campus.
+
+---
+
+# 🎯 Objective
+
+The main objective of this project is to develop a **desktop-based Smart Campus Lost and Found System** that allows users to:
+
+* Register and login securely
+* Report lost items
+* Report found items
+* Upload item images
+* View all reported items
+* Contact the person who reported the item
+
+The system aims to improve item recovery efficiency and provide a user-friendly platform.
+
+---
+
+# ✨ Features
+
+## 👤 User Features
+
+* User Registration
+* User Login Authentication
+* Secure password storage
+
+---
+
+## 📦 Item Management Features
+
+* Report Lost Items
+* Report Found Items
+* Upload Item Image
+* Add Description and Contact Details
+* View All Lost Items
+* View All Found Items
+
+---
+
+## 🖥️ GUI Features
+
+* Simple and user-friendly interface
+* Built using Java Swing
+* Interactive forms
+* Dashboard navigation
+
+---
+
+## 🗄️ Database Features
+
+* PostgreSQL database integration
+* Secure data storage
+* Image storage using BYTEA
+* Efficient data retrieval using indexes
+
+---
+
+# 🧰 Technologies Used
+
+| Technology               | Purpose               |
+| ------------------------ | --------------------- |
+| Java                     | Programming Language  |
+| Java Swing               | GUI Development       |
+| PostgreSQL               | Database              |
+| JDBC                     | Database Connectivity |
+| SQL                      | Database Queries      |
+| IntelliJ IDEA / NetBeans | IDE                   |
+
+---
+
+# 📁 Project Structure
 
 ```
-lost-and-found/
-├── src/
-│   ├── config/
-│   │   └── DatabaseConfig.java
-│   ├── model/
-│   │   ├── User.java
-│   │   ├── LostItem.java
-│   │   └── FoundItem.java
-│   ├── dao/
-│   │   ├── UserDAO.java
-│   │   ├── LostItemDAO.java
-│   │   └── FoundItemDAO.java
-│   ├── view/
-│   │   ├── LoginFrame.java
-│   │   ├── SignupFrame.java
-│   │   ├── HomeFrame.java
-│   │   ├── ReportLostItemFrame.java
-│   │   ├── ReportFoundItemFrame.java
-│   │   ├── ViewLostItemsFrame.java
-│   │   ├── ViewFoundItemsFrame.java
-│   │   └── ReportHistoryFrame.java
-│   ├── controller/
-│   │   ├── AuthController.java
-│   │   └── ItemController.java
-│   ├── util/
-│   │   ├── ImageUtil.java
-│   │   └── ValidationUtil.java
-│   └── Main.java
-├── lib/
-│   └── postgresql-42.7.1.jar
-├── resources/
-│   └── images/
-└── database/
-    └── schema.sql
+Smart_Campus_Lost_And_Found_System/
+
+Main.java
+
+DB.java
+
+LoginSignupFrame.java
+
+HomeFrame.java
+
+ReportFrame.java
+
+ViewItemsFrame.java
+
+database.sql
+
+README.md
 ```
 
-## Prerequisites
+---
 
-1. **Java Development Kit (JDK)** 11 or higher
-2. **PostgreSQL JDBC Driver** (included in lib folder)
-3. **Supabase Account** with PostgreSQL database
+# ⚙️ Steps to Run the Program
 
-## Database Setup
+## Step 1: Install Requirements
 
-### 1. Create Supabase Project
+Install:
 
-The application uses a Supabase-hosted PostgreSQL database.
+* Java JDK 8 or above
+* PostgreSQL
+* IDE (IntelliJ / NetBeans recommended)
 
-Set up a Supabase project, execute the schema file located in 
-`database/schema.sql`, and configure the connection credentials 
-in `src/config/DatabaseConfig.java`.
+---
 
+## Step 2: Create Database
 
-### 2. Run SQL Schema
+Open PostgreSQL and run:
 
-Execute the SQL script in `database/schema.sql` in your Supabase SQL Editor.
-
-### 3. Configure Database Connection
-
-Edit `src/config/DatabaseConfig.java` and update:
-- `DB_URL`: Your Supabase database URL
-- `DB_USER`: Your database username
-- `DB_PASSWORD`: Your database password
-
-## Compilation and Running
-
-### Option 1: Using Command Line
-
-```bash
-# Navigate to project directory
-cd "d:\lost and found"
-
-# Compile all Java files
-javac -cp "lib\postgresql-42.7.1.jar" -d bin src\**\*.java
-
-# Run the application
-java -cp "bin;lib\postgresql-42.7.1.jar" Main
+```sql
+CREATE DATABASE campus_lost_found;
 ```
 
-### Option 2: Using batch script (Windows)
+---
 
-```bash
-# Compile
-compile.bat
+## Step 3: Run Database Script
 
-# Run
-run.bat
+Execute:
+
+```
+database.sql
 ```
 
-## Usage
+This creates required tables.
 
-1. **First Time Setup**:
-   - Run the application
-   - Click "Sign Up" to create an account
-   - Use a campus email (e.g., student@campus.edu)
+---
 
-2. **Login**:
-   - Enter your email and password
-   - Click "Login"
+## Step 4: Configure Database Connection
 
-3. **Report Lost Item**:
-   - Click "Report Lost Item" from home page
-   - Fill in item details
-   - Upload an image (optional)
-   - Submit
+Open **DB.java**
 
-4. **Report Found Item**:
-   - Click "Report Found Item"
-   - Fill in details and submit
+Edit:
 
-5. **View Items**:
-   - Browse all lost or found items
-   - View images and contact details
+```java
+String url = "jdbc:postgresql://localhost:5432/campus_lost_found";
+String user = "postgres";
+String password = "your_password";
+```
 
-6. **Report History**:
-   - View all your reported items (both lost and found)
+---
 
-## Security Features
+## Step 5: Compile the Program
 
-- Password hashing using SHA-256
-- Prepared statements to prevent SQL injection
-- Email validation for campus emails
-- Session management for logged-in users
+Open terminal in project folder:
 
-## UI Features
+```
+javac *.java
+```
 
-- Clean, modern interface
-- Responsive layout using BorderLayout and GridBagLayout
-- Image preview before upload
-- Scrollable tables for item lists
-- Proper error handling and user feedback
+---
 
-## License
+## Step 6: Run the Program
 
-MIT License
+```
+java Main
+---
+
+# 🧪 Sample Inputs and Outputs / Test Cases
+
+---
+
+## Test Case 1: User Registration
+
+**Input:**
+
+Full Name: Noel Jais Manuel
+
+Email: [nl@email.com](mailto:nl@email.com)
+
+Password: 123456
+
+Phone: 9876543210
+
+**Output:**
+
+User registered successfully
+
+---
+
+## Test Case 2: User Login
+
+**Input:**
+
+Email: [nl@email.com](mailto:nl@email.com)
+
+Password: 123456
+
+**Output:**
+
+Login successful
+
+Home screen opens
+
+---
+
+## Test Case 3: Report Lost Item
+
+**Input:**
+
+Item Name: Wallet
+
+Description: Black leather wallet
+
+Contact: 9876543210
+
+**Output:**
+
+Lost item reported successfully
+
+Item saved in database
+
+---
+
+## Test Case 4: View Items
+
+**Action:**
+
+Click View Items
+
+**Output:**
+
+List of lost and found items displayed
+
+---
+
+## Test Case 5: Database Verification
+
+**Query:**
+
+```sql
+SELECT * FROM lost_items;
+```
+
+**Output:**
+
+Shows reported items
+
+---
+
+# 🔄 System Workflow
+
+```
+User
+ ↓
+Login / Signup
+ ↓
+Home Screen
+ ↓
+Report Item / View Items
+ ↓
+Database Storage
+ ↓
+Item Recovery
+```
+
+---
+
+# 🔐 Security Features
+
+* Secure login system
+* Password stored securely
+* PreparedStatement prevents SQL Injection
+* Database constraints
+
+---
+
+# 🚀 Future Enhancements
+
+* Search functionality
+* Filter items
+* Claim item feature
+* Email notification
+* Admin panel
+* Mobile app version
+* Web-based system
+
+---
+
+# 🎓 Conclusion
+
+The Smart Campus Lost and Found System provides an efficient and user-friendly solution for managing lost and found items in a campus environment. It simplifies reporting, improves communication, and increases the chances of recovering lost items.
+
+---
+
+# 📄 License
+
+This project is developed for educational purposes.
+
+---
+
+# ⭐ Thank You
