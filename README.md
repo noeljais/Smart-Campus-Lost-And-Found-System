@@ -1,13 +1,13 @@
-# 🎒 Smart Campus Lost and Found System
+#Smart Campus Lost and Found System
 
-## 👥 Team Members
+##Team Members
 
 * **Noel Jais Manuel**
 * **Bharath**
 
 ---
 
-# 📌 Problem Statement
+#Problem Statement
 
 In a large campus environment, students and staff frequently lose personal belongings such as ID cards, wallets, mobile phones, keys, and books. Currently, there is no centralized digital system to report and track lost and found items. This results in:
 
@@ -20,7 +20,7 @@ Therefore, there is a need for a **centralized digital Lost and Found System** t
 
 ---
 
-# 🎯 Objective
+#Objective
 
 The main objective of this project is to develop a **desktop-based Smart Campus Lost and Found System** that allows users to:
 
@@ -35,9 +35,9 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ---
 
-# ✨ Features
+#Features
 
-## 👤 User Features
+##User Features
 
 * User Registration
 * User Login Authentication
@@ -45,7 +45,7 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ---
 
-## 📦 Item Management Features
+##Item Management Features
 
 * Report Lost Items
 * Report Found Items
@@ -56,7 +56,7 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ---
 
-## 🖥️ GUI Features
+##GUI Features
 
 * Simple and user-friendly interface
 * Built using Java Swing
@@ -65,7 +65,7 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ---
 
-## 🗄️ Database Features
+##Database Features
 
 * PostgreSQL database integration
 * Secure data storage
@@ -74,7 +74,7 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ---
 
-# 🧰 Technologies Used
+#Technologies Used
 
 | Technology               | Purpose               |
 | ------------------------ | --------------------- |
@@ -87,7 +87,7 @@ The system aims to improve item recovery efficiency and provide a user-friendly 
 
 ---
 
-# 📁 Project Structure
+#Project Structure
 
 ```
 Smart_Campus_Lost_And_Found_System/
@@ -114,7 +114,7 @@ database.sql
 
 ---
 
-# ⚙️ Steps to Run the Program
+#Steps to Run the Program
 
 ## Step 1: Install Requirements
 
@@ -178,7 +178,7 @@ javac *.java
 java Main
 ---
 
-# 🧪 Sample Inputs and Outputs / Test Cases
+#  Sample Inputs and Outputs / Test Cases
 
 ---
 
@@ -260,7 +260,7 @@ Shows reported items
 
 ---
 
-# 🔄 System Workflow
+#System Workflow
 
 ```
 User
@@ -278,7 +278,7 @@ Item Recovery
 
 ---
 
-# 🔐 Security Features
+#Security Features
 
 * Secure login system
 * Password stored securely
@@ -287,7 +287,7 @@ Item Recovery
 
 ---
 
-# 🚀 Future Enhancements
+#Future Enhancements
 
 * Search functionality
 * Filter items
@@ -299,16 +299,16 @@ Item Recovery
 
 ---
 
-# 🎓 Conclusion
+#Conclusion
 
 The Smart Campus Lost and Found System provides an efficient and user-friendly solution for managing lost and found items in a campus environment. It simplifies reporting, improves communication, and increases the chances of recovering lost items.
 
 ---
 
-# 📄 License
+#License
 
 This project is developed for educational purposes.
 
 ---
 
-# ⭐ Thank You
+#Thank You
